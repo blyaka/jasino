@@ -1,0 +1,13 @@
+{% extends '_base.html' %}
+{% load i18n %}
+{% block title %}Profile {{ profile.username }}{% endblock %}
+{% block content %}
+    <div>
+        <img src="{{ profile.get_avatar }}" class="avatar">
+        <h1 class="profileName">{{ profile.username }}</h1>
+        <p class="profileMail">E-mail: {{ profile.email }}</p>
+        <p class="profileBalance">Balance: {{ profile.balance }}</p>
+    </div>
+
+
+{% endblock content %}

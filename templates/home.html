@@ -1,0 +1,21 @@
+{% extends '_base.html' %}
+{% block title %}Home{% endblock %}
+{% block content %}
+        <div class="home_blocks">
+
+            <div class="topuserlist" id="home_blocks">
+                <h1>Top Users</h1>
+                {% for user in view.all_users %}
+                    <h3><a href="{{ user.get_absolute_url }}"><img class="topuseravatar" src="{{ user.get_avatar }}">{{ user.username }}</a></h3>
+                {% endfor %}
+            </div>
+
+            <div class="top_games" id="home_blocks">
+                <h1>Games</h1>
+                {% for game in view.all_games %}
+                    <h3><a href="{{ game.get_absolute_url }}"><img class="topgamecover" src="{{ game.cover.url }}">{{ game.name }}</a></h3>
+                {% endfor %}
+            </div>
+        </div>
+
+{% endblock content %}

@@ -1,0 +1,22 @@
+{% extends '_base.html' %}
+{% block content %}
+    <form class="navbar-form" role="search" action="{% url 'games_search_results' %}">
+        <div class="form-group">
+            <input name="q" type="text" class="form-control" placeholder="Search" method="get">
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+    </form>
+    <hr>
+    {% if games_list %}
+    <h1>Search Results:</h1>
+    <div class="gameslist">
+        {% for game in games_list %}
+            <div class="game">
+                <h3 class="gamename"><a class="gamename" href="{{ game.get_absolute_url }}"><img class="gamecover" src="{{ game.cover.url }}" border="0">{{ game.name }}</a></h3>
+            </div>
+        {% endfor %}
+    </div>
+    {% else %}
+        <h1>No Results</h1>
+    {% endif %}
+{% endblock content %}

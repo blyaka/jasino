@@ -1,0 +1,15 @@
+{% extends '_base.html' %}
+{% block title %}{{ game.name }}{% endblock %}
+{% block content %}
+    <div class="game">
+
+    </div>
+
+    <form class="bet" action="#" method="POST">
+        {% csrf_token %}
+        <input class="form-control" name="bet" type="number" min="10" max="{{ user.balance }}" placeholder="10">
+        <input type="submit" class="btn btn-success" name="more">More</input>
+        <input type="submit" class="btn btn-warning" name="less">Less</input>
+    </form>
+
+{% endblock content %}

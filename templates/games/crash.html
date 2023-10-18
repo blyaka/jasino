@@ -1,0 +1,13 @@
+{% extends 'games/game_base.html' %}
+{% load static %}
+{% block title %}Crash{% endblock %}
+{% block content %}
+    <script type="text/javascript" src={% static "js/ajax.js" %}></script>
+    <h1>Crash</h1>
+    <div id="is-playing">
+        <h2>Делаем ставки!</h2>
+        <!-- <script>loadDoc('game-status', readyToPlay)</script> -->
+        <button type="button" onclick="startTimer()">go</button>
+    </div>
+    </form>
+{% endblock content %}

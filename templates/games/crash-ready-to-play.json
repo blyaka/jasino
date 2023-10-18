@@ -1,0 +1,11 @@
+{
+  "crash": {
+    "is-playing": "True"
+    },
+  "double": {
+    "is-playing": "False"
+    },
+  "nvuti": {
+    "is-playing": "True"
+    }
+}
